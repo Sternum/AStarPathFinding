@@ -24,8 +24,8 @@ public class InputManager : MonoBehaviour
             {
                 if (hit.collider != null && hit.collider.CompareTag("Walkable"))
                 {
-                    GridNode targetNode = AStarZone.GetClosedNode(hit.point);
-                    GridNode playerNode = AStarZone.GetClosedNode(Player.transform.position);
+                    GridNode targetNode = AStarZone.GetClosestNode(hit.point);
+                    GridNode playerNode = AStarZone.GetClosestNode(Player.transform.position);
                     Stack<GridNode> path = AStarAlgorithm.SearchPath(playerNode, targetNode);
                     CharacterMovement.SetPath(path);
                 }

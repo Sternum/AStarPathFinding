@@ -97,7 +97,7 @@ public class AStarZone : MonoBehaviour
         }
     }
 
-    public GridNode GetClosedNode(Vector3 origin)
+    public GridNode GetClosestNode(Vector3 origin)
     {
         float closetDist = WalkableNodes.Min(l => Vector3.Distance(origin, l.Position));
         return WalkableNodes.Find(l => closetDist == Vector3.Distance(origin, l.Position));
